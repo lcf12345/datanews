@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "Ali-Medium";
+    src: url("../Font/AlibabaSans/AlibabaSans-chn/Alibaba-PuHuiTi-Medium.ttf");
+    font-display: swap;
+    }
+    @font-face {
+        font-family: "Ali-Regular";
+        src: url("../Font/AlibabaSans/AlibabaSans-chn/Alibaba-PuHuiTi-Regular.ttf");
+        font-display: swap;
+        }
+
+.background-fixed{
+    width: 100%;
+    position: relative; 
+    top: 0px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: top center;
+    background-attachment: fixed;
+    z-index: inherit;
+}
+
+h1.articletitle{
+    color: #ffffff;
+    font-size: 3.5rem;
+    text-align: center;
+    font-family: "Ali-Medium";
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+h1.paragraphtitle{
+    color: #101010;
+    font-size: max(3vw,3vh);
+    text-align: center;
+    font-family: "Ali-Medium";
+}
+
+h1.referencetitle{
+    color: #303030;
+    font-size: max(2vw,2vh);
+    /* line-height: 0; */
+    margin-bottom: 0;
+    text-align: center;
+    font-family: "Ali-Medium";
+}
+
+h2.articletitle{
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Ali-Medium";
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+h2.charttitle{
+    color: #303030;
+    font-size: max(1.75vw,1.75vh);
+    /* line-height: 0; */
+    margin-bottom: 0;
+    text-align: center;
+    font-family: "Ali-Medium";
+}
+
+p.singleline{
+    color: #ffffff;
+    font-size: max(3vw,3vh);
+    text-align: center;
+    font-family: "Ali-Medium";
+    background-color:rgba(0.5, 0.5, 0.5, 0.3);
+    border-radius: 1vw;
+}
+
+p.mainarticle{
+    color: #101010;
+    font-size: max(1.75vw,1.75vh);
+    text-align: justify;
+    line-height: 1.75;
+    font-family: "Ali-Regular";
+    /* background-color:rgba(0.5, 0.5, 0.5, 0.3); */
+    /* border-radius: 1vw; */
+
+}
+.reference{
+    color: #101010;
+    font-size: max(1.25vw,1.25vh);
+    text-align: justify;
+    line-height: 1.75;
+    font-family: "Ali-Regular";
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+.chartsource{
+    color: #303030;
+    font-size: max(1vw,1vh);
+    text-align: justify;
+    line-height: 1.5;
+    font-family: "Ali-Medium";
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    /* background-color:rgba(0.5, 0.5, 0.5, 0.3); */
+    /* border-radius: 1vw; */
+
+}
+
+div.chartdiv{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.eightypersent{
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.margincenter{
+    margin:0 auto;
+}
+
+.fixed{
+    position: fixed;
+}

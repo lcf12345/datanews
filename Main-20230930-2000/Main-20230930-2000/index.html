@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIGC and It's Water Consume</title>
+
+    <link rel="stylesheet" href="./CSS/main.css">
+    <script src="./JS/jquery-3.7.1.min.js"></script>
+    <script src="./JS/jquery.scrollstory.min.js"></script>
+    <script src="./JS/d3.v7.min.js"></script>
+
+    
+    <script src="./JS/chartest.js"></script>
+
+
+    <style>
+        @font-face {
+            font-family: Ali-Medium;
+            src: url(./Font/AlibabaSans/AlibabaSans-chn/Alibaba-PuHuiTi-Medium.ttf);
+        }
+        
+        body{background: color #ebe8e6;;}
+        .scrollStoryActiveItem-story0-0{-webkit-transition:ease 0.5s;transition:ease 0.5s;background-image: url(./Image/carrotluox_Young_woman_sitting_at_a_computer_desk_using_Midjour_9b9617bc-7a96-4b2d-b707-45bb8281a32d.jpg);}
+        .scrollStoryActiveItem-story0-1{-webkit-transition:ease 0.5s;transition:ease 0.5s;background-image: url(./Image/carrotluox_Young_lady_sitting_at_computer_desk_and_typing_text__c28949f9-3adf-4728-83f2-35a27244d720.jpg);}       
+        .scrollStoryActiveItem-story0-2{-webkit-transition:ease 0.5s;transition:ease 0.5s;background-image: url(./Image/carrotluox_A_data_center_with_huge_amount_of_server_stack_with__1a8e6de0-e0ba-4094-82ec-cfdb36321036.jpg);}       
+        .scrollStoryActiveItem-story0-3{-webkit-transition:ease 0.5s;transition:ease 0.5s;background-image: url(./Image/carrotluox_Question_boxes_and_question_marks_scatter_everywhere_b06b190a-7481-4704-a8e4-3f9d0efc2ac3.jpg);}       
+        .scrollStoryActiveItem-story0-4{-webkit-transition:ease 0.5s;transition:ease 0.5s;background-image: url(./Image/carrotluox_A_data_center_in_the_desert_vast_secne_bird_view_rea_aef5f785-e8be-456e-b1f9-d9f4e502d49e.jpg);}
+        /* .inviewport{opacity: 1;} */
+        .goTop{
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            display: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="hidden">  
+        <script type="text/javascript">  
+                if (document.images) {  
+                    img1 = new Image();
+                    img2 = new Image();
+                    img3 = new Image();
+                    img4 = new Image();
+                    img5 = new Image();
+                    img1.src = "./Image/carrotluox_Young_woman_sitting_at_a_computer_desk_using_Midjour_9b9617bc-7a96-4b2d-b707-45bb8281a32d.jpg";  
+                    img2.src = "./Image/carrotluox_Young_lady_sitting_at_computer_desk_and_typing_text__c28949f9-3adf-4728-83f2-35a27244d720.jpg";  
+                    img3.src = "/Image/carrotluox_A_data_center_with_huge_amount_of_server_stack_with__1a8e6de0-e0ba-4094-82ec-cfdb36321036.jpg"; 
+                    img4.src = "./Image/carrotluox_Question_boxes_and_question_marks_scatter_everywhere_b06b190a-7481-4704-a8e4-3f9d0efc2ac3.jpg";
+                    img5.src = "./Image/carrotluox_A_data_center_in_the_desert_vast_secne_bird_view_rea_aef5f785-e8be-456e-b1f9-d9f4e502d49e.jpg";
+                }    
+        </script>   
+    </div>
+
+    <div id="container00" class="background-fixed">
+
+        <div id="story0-0" class="story">
+            <div style="height: 150vh;">
+                <div style="height:30vh; "></div>
+                <h1 class="articletitle">AIGC竟是“吸水猛兽”？</h1>
+                <h2 class="articletitle">——数说生成式人工智能与水资源</h2> 
+            </div>
+        </div>
+        
+        <div id="story0-1" class="story">
+            <div class="eightypersent" style="height: 90vh;">
+                <p class="singleline">近年，以ChatGPT为首的生成式人工智能(AIGC)得到了越来越广泛的应用</p>
+            </div>
+        </div>
+
+        <div id="story0-2" class="story">
+            <div class="eightypersent" style="height: 90vh;">
+                <p class="singleline" >但不为人知的是，AIGC的运转往往需要依靠大量的水资源</p>
+            </div>
+        </div>
+
+        <div id="story0-3" class="story">
+            <div class="eightypersent" style="height: 90vh;">
+                <p class="singleline" >研究显示，我们每向ChatGPT-3发起25至50次询问，数据中心便会使用约500毫升的水</p>
+            </div>
+        </div>
+
+        <div id="story0-4" class="story">
+            <div class="eightypersent" style="height: 90vh;">
+                <p class="singleline" >数据中心为何需要使用那么多的水？<br>这些水都被用在了哪儿？<br>会对生态环境产生不利影响吗？</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="container01" class="eightypersent">
+
+        <div id="story1-0" class="story">
+            <div style="padding-top: 5vh;"></div>
+            <h1 class="paragraphtitle">第一章：数据中心用水量剧增的背后</h1>
+        </div>
+
+        <div id="story1-1" class="story">
+            <p class="mainarticle">　　近几年，世界各地的科技企业的用水量都有很大的增长。以谷歌为例，其2022年用水量增长了近22%，并保持着加速增长的趋势。</p>
+
+            <!-- <div style="text-align: center;">
+                <h2 class="charttitle">各企业年用水量</h2>
+                <img src="./SVG/各企业年用水量.svg" alt="" style="width: 80vw;">
+                <div class="flourish-embed flourish-chart" data-src="visualisation/15189955"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+            </div> -->
+                
+            <h2 class="charttitle">部分科技企业年用水量变化图</h2>
+            <div class="chartdiv">
+                <iframe src="./Chart/Corporation_Annual_Water_Consumption.html" frameborder="0" style="width: 80vw;height: 45vw;"></iframe>
+            </div>
+                
+            <div>
+                <p class="chartsource">数据来源：
+                    <a class="chartsource" href="https://esg.baidu.com">百度·ESG</a>
+                    <a class="chartsource" href="https://www.tencent.com/zh-cn/esg.html">腾讯·ESG</a>
+                    <a class="chartsource" href="https://www.huawei.com/cn/sustainability">华为·可持续发展</a>
+                    <a class="chartsource" href="https://sustainability.google/reports/">Google·sustainability</a>
+                    <a class="chartsource" href="https://sustainability.fb.com">Meta·sustainability</a>
+                    <a class="chartsource" href="https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report">Microsoft·Corporate Responsibility</a>
+                </p>
+                <p class="chartsource">数据说明：腾讯公司在2021年前后改变了对于水资源使用的统计方式，故拆分为两组数据分别呈现</p>
+            </div>
+
+        </div>
+
+        <div id="story1-2" class="story">
+            <div style="padding-top: 5vh;"></div>
+            <p class="mainarticle">　　在各家科技公司内部，“数据中心”往往是主要的用水部门。根据腾讯公司发布的报告，在2018至2020年，其总用水量中数据中心的占比连年过半，且有加快增长的趋势。</p>
+
+            <!-- <div style="text-align: center;">
+                <h2 class="charttitle">腾讯用水种类占比</h2>
+                <img src="./SVG/腾讯用水种类占比.svg" alt="" style="width: 80vw;">
+                <div class="eightypersent">
+                    <p class="chartsource">数据来源</p>
+                    <p class="chartsource">数据说明</p>
+                </div>
+            </div> -->
+
+            <h2 class="charttitle">腾讯公司用水占比情况</h2>
+            <div class="chartdiv">
+                <iframe src="./Chart/Tencent_Water_Consumption_Compare.html" frameborder="0" style="width: 80vw;height: 45vw;"></iframe>
+            </div>
+            <div>
+                <p class="chartsource">数据来源：
+                    <a class="chartsource" href="https://www.tencent.com/zh-cn/esg.html">腾讯·ESG</a>
+                </p>
+            </div>
+
+            <div style="padding-top: 5vh;"></div>
+            <p class="mainarticle">　　数据中心用水主要在散热，散热的具体表现……</p>
+        </div>
+
+        <div id="story1-3" class="story">      
+            <p class="mainarticle">　　腾讯数据中心2020年的用水量为2193528.43吨，如果按照一个成年人一天喝2L水来计算，足以满足三百万人1年的饮水需求。</p>  
+            <p class="mainarticle">　　腾讯旗下的云服务品牌腾讯云曾在《浅谈数据中心应急冷源》中指出，数据中心作为信息通讯的中枢，持续运转的服务器将产生大量的热量，若不及时将热量排出，聚集的热量将会引起服务器高温，从而影响设备的稳定运行。</p>
+            <p class="mainarticle">　　数据中心散热一般有风冷和液冷两种模式。《数据中心服务器间接液冷散热系统设计及经济运行研究》指出：传统风冷由于气流组织管理等问题难，以满足高热流密度芯片的散热要求。而液冷技术在改善高发热元件热环境方面表现突出，正在成为数据中心主流的散热方式。 </p>
+            <p class="mainarticle">　　根据腾讯公布的其某个数据中心用水途径和占比可以看出，如此巨大的用水量主要是用在了冷却水的蒸发。</p>
+            
+            <h2 class="charttitle">腾讯公司某数据中心用水途径占比</h2>
+            <div class="chartdiv">
+                <iframe src="./Chart/Tencent_Datacenter_Water_Usage.html" frameborder="0" style="width: 64vw;height: 36vw;"></iframe>
+            </div>
+            <div>
+                <p class="chartsource">数据来源：
+                    <a class="chartsource" href="https://cloud.tencent.com/developer/article/1064281">腾讯云</a>
+                </p>
+            </div>
+
+            <p class="mainarticle">　　随着近几年人工智能的爆发式发展，人们对数据中心计算与处理信息的能力，也就是“算力”，有了极大的需求。算力需求的增长，导致数据中心需要运行更多的硬件设备，从而加大了能源的消耗，也就导致数据中心需要使用更多的水资源用于散热，维持设备的正常运行。</p>
+            <p class="mainarticle">　　根据中国信通院的数据，2022年全球算力规模已经达到了906EFLOPS。据测算，1EFLOPS的算力约等于5台天河2A超级计算机，或者25万台主流双路服务器，或者200万台主流笔记本的算力输出。</p>
+            <p class="mainarticle">　　而正处于蓬勃发展态势下的AIGC对算力有着巨大的需求。以微软率先研发的ChatGPT为首，谷歌、百度、腾讯等国内外企业也纷纷推出了属于自己的大模型。根据中国信通院的数据，近年新推出的大语言模型所使用的数据量和参数规模呈现“指数级”增长，带来智能算力需求爆炸式的增加。</p>
+            <p class="mainarticle">　　以GPT大模型为例，GPT-3模型最大的参数约为1746亿。而业内人士估计，2023年推出的GPT-4模型的参数数量达到了1.8万亿个，训练模型的算力需求是GPT-3的68倍。</p>
+            <p class="mainarticle">　　由此可见，训练AIGC所需要的巨大算力加大了数据中心的散热需求，全球各大数据中心用水量的增长也就不难解释了。</p>
+
+        </div>
+    </div>
+
+    <div id="container02" class="eightypersent">
+        <div id="story2-0" class="story">
+            <div style="padding-top: 5vh;"></div>
+            <h1 class="paragraphtitle">第二章：数据中心与地区水资源竞争</h1> 
+        </div>
+
+
+        <div id="story2-1" class="story">
+            <p class="mainarticle">　　尽管数据中心的确使用着越来越多的水资源，但大量用于蒸发散热的水资源在使用后通常不会遭受污染。那么，这是否就意味者数据中心的大量用水其实无伤大雅？</p>
+            <p class="mainarticle">　　要想寻求这个问题的答案，我们需要考虑到每座数据中心的地区情况。地理、气候、人口、产业等各种方面的影响，世界上各个地区的水资源压力并不一致。</p>
+            <p class="mainarticle">　　非营利性组织“世界资源研究所”的Aqueduct项目对世界各地的水资源情况进行持续的调查，并发布相关数据。基于这些数据，我们可以更加准确地研究分析世界各地的数据中心对地区水资源产生的影响。</p>
+            <p class="mainarticle">　　水资源紧张程度是Aqueduct对地区水资源供应是否紧张的一个指标。其计算了地区的用水需求与地区可用的可再生地表水和地下水供应的比率。用水需求包括家庭、工业、灌溉和畜牧业使用。可用的可再生水供应包括了上游耗用水用户和水利设施对下游供水的影响。更高的值代表了更加紧张的水资源供应情况。</p>
+            <p class="mainarticle">　　以微软公司在旗下Azura服务的数据中心为例，其数据中心有很大一部分都设立在水资源紧张程度“略高”的地区，甚至有20个地区的水资源紧张程度达到了“极高”。</p>
+            <p class="mainarticle">　　下图中，每个圆圈代表了微软Azura的每一座数据中心；圆圈的颜色表示该地区的水资源紧张程度，并通过圆圈的大小进行更进一步的区分。</p>
+
+            <!-- <div style="text-align: center;">
+                <h2 class="charttitle">微软Azura数据中心分布及地区水资源紧张情况</h2>
+                <div class="flourish-embed flourish-map" data-src="visualisation/15192012"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+            </div> -->
+            
+            <h2 class="charttitle">微软Azura数据中心分布及地区水资源紧张情况</h2>
+            <div id="chart2-1" class="chartdiv">
+                <iframe src="./Chart/Microsoft_Datacenter_Water_Consumption_Map.html" frameborder="0" style="width: 80vw;height: 45vw;"></iframe>
+            </div>
+
+            <div>
+                <p class="chartsource">数据来源：
+                    <a class="chartsource" href="https://www.wri.org/applications/aqueduct/water-risk-atlas">Aqueduct</a>
+                    <a class="chartsource" href="https://azure.microsoft.com/en-us/">Microsoft Azure</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div id="story2-2" class="story"> 
+            <div style="padding-top: 5vh;"></div>
+            <p class="mainarticle">　　让我们把视线聚焦到美国中部爱荷华州的首府“得梅因”。</p>
+            <p class="mainarticle">　　得梅因坐落着微软的一座数据中心。在这座数据中心里，由微软支持的OpenAI完成了GPT-4大模型的训练</p>
+            <p class="mainarticle">　　得梅因是一个容易受到干旱影响的地区。根据美国干旱监测的显示，得梅因所处的爱荷华州有大约80%的地区处于干旱状态，更有大约18%的地区处于极度干旱的状态。</p>
+            <p class="mainarticle">　　2023年7月份，得梅因地区的降雨量为2.32英寸，比正常值低了1.5英寸，这导致了得梅因的主要供水河流——浣熊河的水位比平时低了许多。因此，该地区的自来水厂不得不提高浣熊河闸板的高度，以收集更多的水资源。</p>
+            <div style="text-align: center;"><img src="./Image/Raccoon_River_Water.jpg" alt="" style="width: 80vw;"></div>
+            <p class="mainarticle">　　得梅因自来水厂表示，2022年7月，也就是OpenAI表示完成GPT-4培训的前一个月，微软向其爱荷华州的数据中心群注入了约1150万加仑的水，相当于该地区总用水量的6%左右。</p>
+            <p class="mainarticle">　　仅管，目前没有任何直接证据表明该地区的数据中心对当地的干旱情况造成了直接的负面影响，但在如此干旱的地区使用如此规模的水资源，势必会对当地的水域与气候产生影响。我们不免忧虑，在用水量逐渐增大的趋势下，本就干旱的艾奥瓦州，也许无法承受这样的冲击。</p>
+        
+        </div>
+
+        <div id="story2-3" class="story"> 
+            <div style="padding-top: 5vh;"></div>
+            <p class="mainarticle">　　不仅是微软的数据中心，许多科技公司的部分数据中心都会与地区竞争水资源。</p>
+            <p class="mainarticle">　　谷歌公司在全球也有着众多的数据中心。根据谷歌发布的2023环境报告，2022年，谷歌位于世界各处的数据中心一共取用了250.65亿升的水。除去其排放的53.06亿升水，其净消耗了197.59亿升的水。</p>
+            <p class="mainarticle">　　下图显示了谷歌全球主要数据中心所在地区的水资源紧张程度与水资源季节差异程度。每个圆圈代表了一座数据中心，圆圈大小表示每座数据中心的净耗水量</p>
+
+            <h2 class="charttitle">谷歌主要数据中心净耗水量与地区水资源紧张度及季节差异度</h2>
+            <div class="chartdiv">
+                <iframe src="./Chart/Google_Datacenter_Scatter.html" frameborder="0" style="width: 80vw;height: 45vw;position: relative;"></iframe>
+            </div>
+
+            <div>
+                <p class="chartsource">数据来源：
+                    <a class="chartsource" href="https://www.wri.org/applications/aqueduct/water-risk-atlas">Aqueduct</a>
+                    <a class="chartsource" href="https://sustainability.google/reports/">Google·sustainability</a>
+                </p>
+            </div>
+                 
+            <p class="mainarticle">　　从图中可以看出，谷歌的许多数据中心都分布在图中右侧，即处于水资源紧张程度较大的地区，并且其中一些数据中心的净耗水量并不小。</p>
+            <p class="mainarticle">　　而位于图中右上角的两座数据中心，其所处位置不仅有着较大的水资源紧张程度，也有着较大的季节差异。地区的旱季，这两座数据中心获或许会对地区的水资源供给带去更大的影响。</p>
+        </div>
+            
+
+        <div id="story2-4" class="story">               
+        </div>
+    
+    </div>
+
+    <div id="container03" class="eightypersent">
+        <div id="story3-0" class="story">
+            <div style="padding-top: 5vh;"></div>       
+            <h1 class="paragraphtitle">第三章：展望</h1>   
+     
+        </div>
+
+        <div id="story3-1" class="story">       
+            <p class="mainarticle">　　所幸，越来越多的数据中心都开始关注“可持续发展”议题。</p>
+            <p class="mainarticle">　　微软得梅因的数据中心在今年四月份的报告称，其会在2030年达到“water positive”（即产出的水大于使用的水）。短期来看，微软承诺会在2024年减少该地区数据中心95%的用水。而实现这一目的的手段，就是该地区微软数据中心的“绝热冷却”技术：在外界温度低于29.4摄氏度的时候，完全使用外界空气进行降温，从而大大减少冷却水的用量。</p>
+            <p class="mainarticle">　　中国国内的数据中心同样也会采纳将空气冷却和液体冷却相结合的方法来减少水的使用。</p>
+            <p class="mainarticle">　　华为在《数据中心2030》中指出：其新型制冷系统通过风冷、液冷兼容性架构设计，支持风液动态灵活调配，能够更好的匹配急剧增长的算力需求。通过降低传热温差，因地制宜充分利用干空气、湖水等自然冷源，将实现近100%自然冷却，制冷能效提升2~3倍。</p>
+            <p class="mainarticle">　　同时，一些数据中心还在积极探索将水冷时吸收的热量进行再利用，将余热用于供暖、发电等。</p>
+            <p class="mainarticle">　　放眼世界，许多科技企业与数据中心每年都会发布“可持续发展”报告，其中详细阐述数据中心每年的环境资源消耗，以及为了达成可持续发展已经做出的以及将会做出的努力。</p>
+            <p class="mainarticle">　　人工智能作为科学技术发展的一大里程碑，不仅使得我们的生活更加方便，也为未来的发展提供了更多的可能。在享受技术所带来的便利同时，也要统筹环境保护，做到可持续发展。绿水青山就是金山银山，相信在全世界的共同努力下，人工智能的发展能克服一个个难题，为人们带来更好的生活。</p>
+        </div>
+
+        <div style="padding-top: 5vh;"></div>       
+        <h1 class="referencetitle">参考资料及数据来源</h2>
+        <div id="story3-2" class="story" >
+            <div style="padding-top: 2vh;"></div>       
+            <p class="reference">[1]<a class="reference" href="https://kns.cnki.net">余道广《数据中心服务器间接液冷散热系统设计及经济运行研究》山东大学，2021</a></p>
+            <p class="reference">[2]<a class="reference" href="https://kns.cnki.net">姚亚楠，李蕾《聊10句天，ChatGPT要费半斤水？专家呼吁建立数据中心用水国标》每日经济新闻，2023</a></p>
+            <p class="reference">[3]<a class="reference" href="https://kns.cnki.net">孙冰《智能算力需求大爆发  数据中心何时能搭建“全国一张网”》中国经济周刊，2023</a></p>
+            <p class="reference">[4]<a class="reference" href="https://apnews.com/article/chatgpt-gpt4-iowa-ai-water-consumption-microsoft-f551fde98083d17a7e8d904f8be822c4">AP News: Artificialintelligence technology behind ChatGPT was built in Iowa — with a lot of water</a></p>
+            <p class="reference">[5]<a class="reference" href="https://www.desmoinesregister.com/story/money/agriculture/2023/08/02/des-moines-water-works-raccoon-river-flashboards-up-for-third-year-amid-drought/70515880007/">Des Moines Register: Drought forces Des Moines Water Works to raise Raccoon River flashboards for third year</a></p>
+            <p class="reference">[6]<a class="reference" href="http://www.caict.ac.cn/">中国信通院《2022中国算力发展指数白皮书》</a></p>
+            <p class="reference">[7]<a class="reference" href="https://www.unccd.int/resources/publications/drought-numbers">联合国《干旱数字》报告</a></p>
+            <p class="reference">[8]<a class="reference" href="https://esg.baidu.com">百度：ESG</a></p>
+            <p class="reference">[9]<a class="reference" href="https://www.tencent.com/zh-cn/esg.html">腾讯：ESG</a></p>
+            <p class="reference">[10]<a class="reference" href="https://www.huawei.com/cn/sustainability">华为：可持续发展</a></p>
+            <p class="reference">[11]<a class="reference" href="https://www.huawei.com/cn/giv/data-center-2030">华为：《数据中心2030》</a></p>
+            <p class="reference">[12]<a class="reference" href="https://sustainability.google/reports/">Google: sustainability</a></p>
+            <p class="reference">[13]<a class="reference" href="https://www.gstatic.com/gumdrop/sustainability/google-2023-environmental-report.pdf">Google: Environmental Report 2023</a></p>
+            <p class="reference">[15]<a class="reference" href="https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report">Microsoft: Corporate Responsibility</a></p>
+            <p class="reference">[16]<a class="reference" href="https://local.microsoft.com/wp-content/uploads/2023/07/Microsoft-datacenters-in-Iowa.pdf">Microsoft: Microsoft data center in Iowa</a></p>
+            <p class="reference">[14]<a class="reference" href="https://sustainability.fb.com">Meta: sustainability</a></p>
+            <p class="reference">[17]<a class="reference" href="https://www.wri.org/applications/aqueduct/water-risk-atlas">Aqueduct</a></p>
+
+            <div style="padding-top: 2vh;"></div>       
+            <p class="reference">图表制作工具：<a class="reference" href="https://Flourish.studio">Flourish</a></p> 
+            <div style="padding-top: 2vh;"></div>       
+            <p class="reference">小组成员：罗海奕，李春辉，李怡萌，沙易雯，张依然</p>
+            <p class="reference">指导老师：徐翔，卞清</p>
+            <div style="padding-top: 2vh;"></div>
+            <div style="text-align: center;"><img src="./Image/AM_TJU-Logo.png" alt="" style="width: 30vw;"></div>          
+        </div>
+
+    </div>
+    
+    <script>
+        var windowHeight = $(window).height();
+        $(window).resize(function(){
+            windowHeight = $(window).height();   // returns height of browser viewport
+        })
+        
+        // Instantiation
+        $(function(){
+            $('#container00').scrollStory({
+                triggerOffset: windowHeight,
+                scrollOffset: windowHeight,
+            });
+
+            $('#container01').scrollStory({
+                triggerOffset: windowHeight,
+                scrollOffset: windowHeight,
+            });
+            
+            $('#container02').scrollStory({
+                triggerOffset: 0,
+                scrollOffset: 0,
+            });
+
+            $("#container02").on('itemfocus', function(item){
+                if(item.index === 1){
+                    $("#chart2-1").addClass("fixed");
+                }
+            });
+            
+            $("#container02").on('itemblur', function(item){
+                if(item.index === 0){
+                    $("#chart2-1").remove("fixed");
+                }
+            });
+
+            
+        });
+
+
+    </script>
+
+</body>
+</html>
